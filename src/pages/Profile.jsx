@@ -55,7 +55,6 @@ function Profile() {
 			setListings(listings)
 			setLoading(false)
 		}
-
 		fetchUserListings()
 	}, [auth.currentUser.uid])
 

@@ -1,27 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Navbar from "./components/Navbar"
 import PrivateRoute from "./components/PrivateRoute"
 import {
-	Explore,
-	ForgotPassword,
-	Offers,
-	Profile,
-	SignIn,
-	SignUp,
-	Category,
-	CreateListing,
-	Listing,
-	Contact,
-	EditListing,
-} from "./pages"
+  Explore,
+  ForgotPassword,
+  Offers,
+  Profile,
+  SignIn,
+  SignUp,
+  Category,
+  CreateListing,
+  Listing,
+  Contact,
+  EditListing,
+} from "./pages";
 
-function App() {
+export default function Routes() {
 	return (
 		<>
-			<Router>
-				<Routes>
+			<BrowserRouter>
+				<Switch>
 					<Route path="/" element={<Explore />} />
 					<Route path="/offers" element={<Offers />} />
 					<Route path="/category/:categoryName" element={<Category />} />
@@ -35,14 +35,12 @@ function App() {
 					<Route path="/category/:categoryName/:listingId" element={<Listing />} />
 					<Route path="/contact/:landlordId" element={<Contact />} />
 					<Route path="/edit-listing/:listingId" element={<EditListing />} />
-				</Routes>
+				</Switch>
 				<div className="mb"></div>
 				<Navbar />
-			</Router>
+			</BrowserRouter>
 
 			<ToastContainer />
 		</>
 	)
 }
-
-export default App

@@ -32,6 +32,7 @@ function Offers() {
 					limit(10)
 				)
 
+				
 				// Execute query
 				const querySnap = await getDocs(q)
 
@@ -50,7 +51,8 @@ function Offers() {
 				setListings(list)
 				setLoading(false)
 			} catch (error) {
-				toast.error("Could not fetch listings")
+				console.log(error)
+				toast.error(error)
 			}
 		}
 
